@@ -1,7 +1,23 @@
-on: push
+name : Docker Image CI
+
+on: 
+  push: 
+    branches: main
+  pull_request:
+    branches: main
+    
 jobs:
-  first-job:
+
+  builds:
     runs-on: ubuntu-latest
-    steps: 
-      - name: check-version
-        run: cat /etc/os-release
+    steps:
+    - uses: actions/checkout@v3 
+    - name: set up python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+    - name: Build the Docker Image
+      run: docker build . --file dockerfile --tag test-image:v1
+      
+    
+
