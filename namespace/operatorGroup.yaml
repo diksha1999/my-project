@@ -3,6 +3,4 @@ kind: OperatorGroup
 metadata:
   name: devspaces
   namespace: openshift-devspaces
-spec: 
-  targetNamespaces:
-  - openshift-devspaces
+spec: {}
