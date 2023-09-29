@@ -4,10 +4,10 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: '8'
   labels:
-    app: api-app
-    app.kubernetes.io/instance: api-app
-  name: api-app
-  namespace: api-app
+    app: nginx
+    app.kubernetes.io/instance: nginx
+  name: nginx
+  namespace: test2
 spec:
   ports:
     - name: web
@@ -15,5 +15,5 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app: api-app
+    app: nginx-deployment
   type: LoadBalancer
