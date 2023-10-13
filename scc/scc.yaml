@@ -47,4 +47,4 @@ volumes:
 - emptyDir
 - hostPath
 - secret
-- FlexVolumes
+- flexVolumes
